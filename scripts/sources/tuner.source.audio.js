@@ -129,7 +129,7 @@ Tuner.Source.Audio.prototype.init = function(tuner)
 	catch(e) {
 
 		console.debug(e);
-		alert('Unsupported browser. Your browser does not support a microphone.');
+		alert('Unsupported browser. Your browser does not support a microphone: ' + e.toString());
 	}
 };
 
