@@ -1050,7 +1050,7 @@ Tuner.Source.Audio.prototype.init = function(tuner)
 		// Read options from parent's `Tuner` object
 		var audio_options = this.options.media_audio_options;
 		// Start Audio Input capture
-		var usermedia = navigator.mediaDevices.getUserMedia({audio:audio_options}, this.connect_success.bind(this), this.connect_error.bind(this));
+		var usermedia = navigator.mediaDevices.getUserMedia({audio:audio_options}).then(this.connect_success.bind(this)).catch(this.connect_error.bind(this));
 	}
 	catch(e) {
 
