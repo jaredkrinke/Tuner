@@ -112,19 +112,13 @@ Tuner.Source.Audio.prototype.init = function(tuner)
 
 	// Set global objects (`AudioContext` and `getUserMedia`) depending on browser
 	window.AudioContext = window.AudioContext || window.webkitAudioContext;
-	navigator.getUserMedia = (
-		navigator.getUserMedia ||
-		navigator.webkitGetUserMedia ||
-		navigator.mozGetUserMedia ||
-		navigator.msGetUserMedia
-	);
 
 	try {
 		
 		// Read options from parent's `Tuner` object
 		var audio_options = this.options.media_audio_options;
 		// Start Audio Input capture
-		var usermedia = navigator.getUserMedia({audio:audio_options}, this.connect_success.bind(this), this.connect_error.bind(this));
+		var usermedia = navigator.mediaDevices.getUserMedia({audio:audio_options}, this.connect_success.bind(this), this.connect_error.bind(this));
 	}
 	catch(e) {
 
