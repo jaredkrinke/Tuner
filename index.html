@@ -8,13 +8,13 @@
 	<script src="scripts/tuner.js"></script>
 	<script>
 
-	window.addEventListener('load', init_tuner, false);
-
 	var tuner;
 	function init_tuner() 
 	{
 		tuner = new Tuner({});
 	}
+
+	window.addEventListener('touchstart', init_tuner, false);
 
 	</script>
 </head>
