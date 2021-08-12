@@ -268,7 +268,7 @@ var Tuner = function(opts) {
 		*
 		* @see {this.available_instruments}
 		*/
-		instrument: 'guitar',
+		instrument: 'none',
 		tuning: null, // When null, use instrument's default
 
 		/**
